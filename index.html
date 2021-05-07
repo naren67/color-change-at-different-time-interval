@@ -20,14 +20,32 @@
                     const button = document.getElementById('button')
                     const paragraph = document.getElementById('paragraph')
 
-                    function generate() {
-                              let color = '#'
-                              let code = Math.random().toString(16).slice(2, 8)
-                              color += code
-                              console.log(color)
+                    window.addEventListener('load', () => {
+                              generate()
+                    })
 
-                              bodyColor.style.background = color
-                              paragraph.innerText = color
+                    function generate() {
+                              const maxTime = 2
+                              let i = 0
+
+                              const timer = setInterval(() => {
+                                        i++
+
+                                        if (i === maxTime) {
+                                                  clearInterval(timer)
+                                                  let color = '#'
+                                                  let code = Math.random().toString(16).slice(2, 8)
+                                                  color += code
+                                                  console.log(color)
+
+                                                  bodyColor.style.background = color
+                                                  paragraph.innerText = color
+                                                  generate()
+                                        }
+                                        console.log(i)
+                              }, 1000)
+
+
                     }
 
           </script>
