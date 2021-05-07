@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+          <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+          <div class="body" id="bodyColor">
+                    <button onclick="generate()" id="button">Color change</button>
+                    <p id="paragraph">color code</p>
+          </div>
+
+          <script>
+                    const bodyColor = document.getElementById('bodyColor')
+                    const button = document.getElementById('button')
+                    const paragraph = document.getElementById('paragraph')
+
+                    function generate() {
+                              let color = '#'
+                              let code = Math.random().toString(16).slice(2, 8)
+                              color += code
+                              console.log(color)
+
+                              bodyColor.style.background = color
+                              paragraph.innerText = color
+                    }
+
+          </script>
+</body>
+
+</html>
